@@ -6,7 +6,18 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
 
+import './styles/app.css';
+// import './styles/home/flex-slider.css';
+// import './styles/home/fontawesome.css';
+// import './styles/home/owl.css';
+// import './styles/home/templatemo-stand-blog.css';
+// import complie javascript file
+
+import './js/home/accordions';
+import './js/home/custom';
+import './js/home/isotope';
+import './js/home/owl';
+import './js/home/slick';
 // start the Stimulus application
 import './bootstrap';

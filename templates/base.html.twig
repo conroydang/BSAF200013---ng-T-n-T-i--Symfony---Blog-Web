@@ -6,14 +6,21 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+        {{encore_entry_link_tags('app')}}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" type="text/css">
+           <link href="{{asset('build/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+             <link rel="stylesheet" href="{{ asset('build/styles/home/owl.css') }}" type="text/css">
+             <link rel="stylesheet" href="{{ asset('build/styles/home/fontawesome.css') }}" type="text/css">
+              <link rel="stylesheet" href="{{ asset('build/styles/home/flex-slider.css') }}" type="text/css">
+               <link rel="stylesheet" href="{{ asset('build/styles/home/templatemo-stand-blog.css') }}" type="text/css">   
         {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
+      
+        
+     {% block javascripts %} 
+     {{encore_entry_script_tags('app')}}
+     {% endblock %}
     </body>
 </html>

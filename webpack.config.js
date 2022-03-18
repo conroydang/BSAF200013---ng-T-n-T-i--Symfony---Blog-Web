@@ -20,8 +20,17 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/app.js')
 
+
+    .addEntry('app', './assets/app.js')
+    .addEntry('custom', './assets/js/home/custom.js')
+    .addEntry('accordions', './assets/js/home/accordions.js')
+    .addEntry('isotope', './assets/js/home/isotope.js')
+    .addEntries({'owl': './assets/js/home/owl.js'})
+    .addEntry('slick', './assets/js/home/slick.js')
+    // .addEntry('flex-slider','./assets/styles/home/flex-slider.css')
+    // .addEntry('templatemo-stand-blog','./assets/styles/home/templatemo-stand-blog.css')
+    // .addEntry('fontawesome','./assets/styles/home/fontawesome.css')
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
