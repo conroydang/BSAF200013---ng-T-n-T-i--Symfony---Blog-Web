@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create new blog!{% endblock %}
+
+{% block body %}
+{{form_start(form)}}
+
+{{form_widget(form)}}
+
+<button type="submit" name="create_blog" class="mt-5 btn btn-danger">Save and Post</button>
+
+{{form_end(form)}}
+{% endblock %}
