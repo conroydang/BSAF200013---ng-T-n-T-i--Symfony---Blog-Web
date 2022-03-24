@@ -19,25 +19,25 @@ class PostType extends AbstractType
         $builder
             ->add('title',TextType::class, [
                 'attr' => array(
-                    'class' => 'form-control',
+                    'class' => 'form-control bg-gray',
                     'placeholder' => 'Enter the title of blog in here'
                 )
             ])
             ->add('summary',TextareaType::class,  [
                 'attr' => array(
-                    'class' => 'form-control',
+                    'class' => 'form-control bg-gray',
                     'placeholder' => 'Enter the summary of blog in here'
                 )
             ])
             ->add('content',TextareaType::class,  [
                 'attr' => array(
-                    'class' => 'form-control',
+                    'class' => 'form-control bg-gray',
                     'placeholder' => 'Enter the content of blog in here'
                 )
             ])
             ->add('categoryId',EntityType::class,[
                 'attr' => array(
-                'class' => 'form-select form-select-lg mb-3',
+                'class' => 'form-select form-select-lg mb-3 bg-gray',
             ),
             'class'=>'App\Entity\Category','choice_label'=>"title"])
             ->add('image',FileType::class, [

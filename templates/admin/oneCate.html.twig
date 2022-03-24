@@ -1,0 +1,47 @@
+{% extends 'admin/dashboard.html.twig' %}
+{% block title %} Details category {% endblock %}
+{% block body %}
+ <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">Details category</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2 m-3">
+            
+                <div class="row">
+                
+                        <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating text-danger text-lg">Category ID:</label>
+                                    <input type="text" class="form-control" disabled value="{{one_category.id}}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating text-danger text-lg">Category Name:</label>
+                                    <input type="text" class="form-control" disabled value="{{one_category.title}}">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row">
+                        <div class="d-flex justify-content-center">
+                        
+                        <a href="/admin/list/category" class="btn btn-danger pull-right ">Back page </a>
+                        </div>
+                        </div>
+                        <div class="clearfix "></div>
+                    
+                   
+                </div>
+                
+            </div>
+          </div>
+        </div>
+</div>
+{% endblock %}

@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
+
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
 {
@@ -16,6 +17,7 @@ class Category
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    
     private $title;
 
     #[ORM\OneToMany(mappedBy: 'categoryId', targetEntity: Post::class)]
@@ -72,4 +74,6 @@ class Category
 
         return $this;
     }
+
+   
 }

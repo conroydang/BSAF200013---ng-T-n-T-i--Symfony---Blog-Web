@@ -1,0 +1,89 @@
+{% extends 'admin/dashboard.html.twig' %}
+
+{% block title %}Details blog!{% endblock %}
+
+{% block body %}
+
+ <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text-capitalize ps-3">Details Blog</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2 m-3">
+            
+                <div class="row">
+                
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating text-danger text-lg">Title of blog</label>
+                                    <input disabled type="text" class="form-control" value="{{one_blog.title}}" disabled>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                               <div class="mb-3">
+                                 <label for="" class="form-label text-danger text-lg">Display image</label>
+                                <img src="{{one_blog.image}}" class="img-thumbnail rounded-top" alt="">
+                                
+                               </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating text-danger text-lg">Category blog:  </label>
+                                      
+                                        <select disabled class="form-control" >
+                                       
+                                          <option value="{{category.id}}">{{category.title}}</option>
+                                        
+                                        </select>
+                                      
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating text-danger text-lg">Content</label>
+                                    <textarea disabled name="" id="" cols="30" rows="10" class="form-control">
+                                    {{one_blog.content}}
+                                    </textarea>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating text-danger text-lg">Summary</label>
+                                    <textarea disabled name="" id="" cols="30" rows="10" class="form-control">
+                                    {{one_blog.summary}}
+                                    </textarea>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="row">
+                        <div class="d-flex justify-content-center">
+                       
+                        <a href="{{path('list_blog')}}" class="btn btn-danger pull-right ">Back Page</a>
+                        </div>
+                        </div>
+                        <div class="clearfix "></div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+</div>
+{% endblock %}
+
