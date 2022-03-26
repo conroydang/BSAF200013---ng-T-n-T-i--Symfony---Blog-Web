@@ -110,26 +110,31 @@ class AdminController extends AbstractController
     }
 
     #[Route('/admin/update/blog/{id}', name: 'update_blog')]
-    public function updateBlogAction(Request $request, $id): Response
+    public function updateBlogAction($id, Request $request): Response
     {
         $data = $this -> postRepository -> find($id);
         $form = $this->createForm(PostType::class, $data);
         $form->handleRequest($request);
         $imgPath = $form->get('image')->getData();
         if($form->isSubmitted() && $form->isValid()){
+            
             if($imgPath){
               if($data -> getImage() !== null ) {
-                  if(file_exists($this -> getParameter('kernel.project_dir') . $data -> getImage())){
-                    $newFileName = uniqid(). '.' . $imgPath->guessExtension();
+                  if(!file_exists($this -> getParameter('kernel.project_dir') . $data -> getImage())){
+                    
                     $this -> getParameter('kernel.project_dir') . $data->getImage();
-
+                    $newFileName = uniqid(). '.' . $imgPath->guessExtension();
+                  
                     try{
                         $imgPath->move($this -> getParameter('kernel.project_dir').'/public/uploads', $newFileName);
+                        
                     }
                     catch(FileException $e){
                         return new Response($e->getMessage());
                     }
                     $data->setImage('/uploads/' . $newFileName);
+                    $this -> em -> flush();
+                    return $this -> redirectToRoute('list_blog');
                   }
               }
 
@@ -148,8 +153,8 @@ class AdminController extends AbstractController
         }
 
         return $this->render('admin/updateBlog.html.twig', [
-            'data'=>$data,
             'form' => $form->createView(),
+            'data'=>$data,
         ]);
     }
 

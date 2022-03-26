@@ -44,7 +44,7 @@ class PostType extends AbstractType
                  'required' => false,
                  'mapped' => false,
                  
-                'attr' => array('class' => 'form-control-file', 'id'=>'exampleFormControlFile1')
+                'attr' => array('class' => 'form-control-file')
             ])
         ;
     }
