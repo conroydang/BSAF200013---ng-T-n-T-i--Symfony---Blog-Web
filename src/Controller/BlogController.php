@@ -46,7 +46,7 @@ class BlogController extends AbstractController
     {   
         $em = $doctrine->getManager();
         $getCate = $em -> getRepository('App:Category')->findAll();
-        $getPost = $em -> getRepository('App:Post')->find($id) -> getCategoryId();
+        $getPost = $em -> getRepository('App:Post')->find($id);
         return $this -> render('blog/details.html.twig',['details_blog' => $getPost, 'categories' => $getCate]);
     }
 
