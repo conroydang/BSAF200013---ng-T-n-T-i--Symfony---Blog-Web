@@ -1,7 +1,14 @@
 {% extends 'blog/index.html.twig'%}
 {% block title %} Details Blog {% endblock %}
 
+
 {% block body %}
+<style>
+#content::after{
+    content: "\a";
+    white-space: pre;
+}
+</style>
 <div class="content">
 <main class="row content__page">
                 <article class="column large-full entry format-gallery">
@@ -32,7 +39,7 @@
 
                     <div class="entry__content">
 
-                        <p class="lead drop-cap">
+                        <p class="lead drop-cap" id="content">
                         {{details_blog.content}}
                         </p>
 
